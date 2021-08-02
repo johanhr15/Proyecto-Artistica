@@ -31,7 +31,7 @@ namespace Proyecto_Artistica
             btnIniciarSesion.Clicked += BtnIniciarSesion_Clicked;
             btnEnviarClave.Clicked += BtnEnviarClave_Clicked;
             lblError.Text = "";
-         
+
         }
 
         private void BtnEnviarClave_Clicked(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace Proyecto_Artistica
             }
             else 
             {
-                lblError.Text = "Credenciales Inválidas...";
+                lblError.Text = "Credenciales Inválidas";
             }
           
           

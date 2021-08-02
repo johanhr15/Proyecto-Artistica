@@ -5,41 +5,44 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Proyecto_Artistica.MainPage">
-    
-    <Grid BackgroundColor="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
-        <StackLayout Grid.Row="1" Padding="10,20">
-            <Label Text="Iniciar Sesión" TextColor="#515151" HorizontalTextAlignment="Start" FontSize="18"/>
-            <Label Text="To make checkout quick and easy or to access an existing Wish List, please sign in below" TextColor="#515151" 
-                   HorizontalTextAlignment="Start" FontSize="12"/>
-            <Entry Placeholder="Nombre de Usuario" PlaceholderColor="#515151" FontSize="13" x:Name="txtUsuario"/>
-            <Entry Placeholder="Contraseña" PlaceholderColor="#515151" FontSize="13" x:Name="txtClave" IsPassword="True"/>
-            <StackLayout Orientation="Horizontal" HeightRequest="35">
-                <Button x:Name="btnIniciarSesion"  Text="Iniciar Sesión" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" FontSize="13" 
+
+    <Grid>
+        <Image Source="texture2.png" Aspect="AspectFill"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*"  />
+                <RowDefinition Height="Auto"  />
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="icono.png" WidthRequest="100" 
+                   HeightRequest="100" Margin="0,50,0,30" />
+
+            <StackLayout Grid.Row="1" Padding="10,20">
+                <Label Text="Iniciar Sesión" TextColor="White"  HorizontalTextAlignment="Start" FontSize="24" FontAttributes="Bold"/>
+                <Label Text="To make checkout quick and easy or to access an existing Wish List, please sign in below" TextColor="White" FontAttributes="Bold"
+                   HorizontalTextAlignment="Start" FontSize="14"/>
+                <Entry Placeholder="Nombre de Usuario" PlaceholderColor="White" FontSize="15" x:Name="txtUsuario" TextColor="White" FontAttributes="Bold"/>
+                <Entry Placeholder="Contraseña" PlaceholderColor="White" FontSize="15" x:Name="txtClave" IsPassword="True" TextColor="White" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal" HeightRequest="35">
+                    <Button x:Name="btnIniciarSesion"  Text="Iniciar Sesión" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" FontSize="15" 
                         WidthRequest="175" HeightRequest="35"/>
-                <Button Text="¿Olvidó su contraseña?" TextColor="blue" FontAttributes="Italic" VerticalOptions="Center" x:Name="btnEnviarClave" BackgroundColor="White" FontSize="12"
+                    <Button Text="¿Olvidó su contraseña?" TextColor="White" FontAttributes="Italic" VerticalOptions="Center" x:Name="btnEnviarClave" BackgroundColor="#515151" FontSize="14"
                         HeightRequest="35"/>
+                </StackLayout>
+                <Label Text="" TextColor="Red" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center" x:Name="lblError"/>
             </StackLayout>
-            <Label Text="" TextColor="Red" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center" x:Name="lblError"/>
-        </StackLayout>
-        <StackLayout Grid.Row="2" Padding="10,100">
-            <Label Text="Crear una cuenta" TextColor="#515151" HorizontalTextAlignment="Start" FontSize="18"/>
-            <Label Text="When you open a La Artistica account, you'll be able to access Express Checkout, create a Wish List and see your order history online." 
-                   TextColor="#515151" HorizontalTextAlignment="Start" FontSize="12"/>
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Crear una Cuenta" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" 
-                        FontSize="13" 
+            <StackLayout Grid.Row="2" Padding="10,40">
+                <Label Text="Crear una cuenta" TextColor="White" HorizontalTextAlignment="Start" FontSize="1"/>
+                <Label Text="When you open a La Artistica account, you'll be able to access Express Checkout, create a Wish List and see your order history online." 
+                   TextColor="White"  HorizontalTextAlignment="Start" FontSize="15" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Crear una Cuenta" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" 
+                        FontSize="15" 
                         WidthRequest="175" HeightRequest="35"
                         x:Name="btnCrear"/>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
-
-
+        </Grid>
     </Grid>
 
 </ContentPage>
