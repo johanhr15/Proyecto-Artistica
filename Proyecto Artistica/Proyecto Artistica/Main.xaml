@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_Artistica.Main">
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logout.png" Priority="3" Order="Primary" x:Name="tbLogout" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
+            <Label Text="" x:Name="lblidUser" IsVisible="false" />
+            <StackLayout Grid.Row="1" Padding="10,20">
+              
+
+                <StackLayout Orientation="Horizontal">
+                    <Button  Text="Comprar" BackgroundColor="#fff" Opacity="0.5" TextColor="#515151" BorderRadius="0" FontSize="10" 
+                            WidthRequest="70" HeightRequest="35" HorizontalOptions="Start" x:Name="btnComprar"/>
+                    <Button  Text="Abonar" BackgroundColor="#fff" Opacity="0.5" TextColor="#515151" BorderRadius="0" FontSize="10" 
+                        WidthRequest="70" HeightRequest="35" HorizontalOptions="Start" x:Name="btnAbonar"/>
+                    <Button  Text="Garantía" BackgroundColor="#fff" Opacity="0.5" TextColor="#515151" BorderRadius="0" FontSize="10" 
+                        WidthRequest="75" HeightRequest="35" HorizontalOptions="Start" x:Name="btnGarantia"/>
+                    <Button  Text="Compras Activas" BackgroundColor="#fff" Opacity="0.5" TextColor="#515151" BorderRadius="0" FontSize="10" 
+                        WidthRequest="120" HeightRequest="35" HorizontalOptions="Start" x:Name="btnCompras"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button  Text="Historial Compras" BackgroundColor="#fff" Opacity="0.5" TextColor="#515151" BorderRadius="0" FontSize="10" 
+                            WidthRequest="120" HeightRequest="50" HorizontalOptions="Start" x:Name="btnHistorialCompras"/>
+                    <Button  Text="Historial Garantía" BackgroundColor="#fff" Opacity="0.5" TextColor="#515151" BorderRadius="0" FontSize="10" 
+                            WidthRequest="120" HeightRequest="50" HorizontalOptions="Start" x:Name="btnHistorialGarantia"/>
+                    <Button  Text="Historial Pagos" BackgroundColor="#fff" Opacity="0.5" TextColor="#515151" BorderRadius="0" FontSize="10" 
+                            WidthRequest="100" HeightRequest="50" HorizontalOptions="Start" x:Name="btnHistorialPagos"/>
+
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="carrusel.JPG" WidthRequest="340"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="carrusel2.JPG" WidthRequest="340"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="carrusel3.JPG" WidthRequest="340"/>
+                </StackLayout>
+            </StackLayout>
+
+
+
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

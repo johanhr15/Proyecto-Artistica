@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Proyecto_Artistica.CreateUsuario">
+    
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
+        <StackLayout Grid.Row="1" Padding="10,20">
+            <Label Text="Crear Cuenta" TextColor="#515151" HorizontalTextAlignment="Start" FontSize="18"/>
+          
+            <Entry Placeholder="Nombre" PlaceholderColor="#515151" FontSize="13" x:Name="txtNombre"/>
+            <Entry Placeholder="Apellidos" PlaceholderColor="#515151" FontSize="13" x:Name="txtApellidos"/>
+            <Entry Placeholder="Email" PlaceholderColor="#515151" FontSize="13" x:Name="txtEmail"/>
+            <Entry Placeholder="Nombre de Usuario" PlaceholderColor="#515151" FontSize="13" x:Name="txtUsuario"/>
+            <Entry Placeholder="Contraseña" PlaceholderColor="#515151" FontSize="13" x:Name="txtClave" IsPassword="True"/>
+
+            <Label Text="" TextColor="Red" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center" x:Name="StatusMessage"/>
+        
+                <Button Text="Registrarse" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" 
+                        FontSize="13" 
+                        WidthRequest="175" HeightRequest="35"
+                        x:Name="btnCrear" HorizontalOptions="Center"/>
+       
+        </StackLayout>
+
+
+    </Grid>
+
+</ContentPage>

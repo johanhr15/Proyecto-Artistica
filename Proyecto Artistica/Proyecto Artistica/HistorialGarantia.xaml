@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_Artistica.HistorialGarantia">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logout.png" Priority="3" Order="Primary" x:Name="tbLogout" />
+        <ToolbarItem IconImageSource="cart.png" Priority="2" Order="Primary" x:Name="tbCart" />
+        <ToolbarItem IconImageSource="home.png" Priority="1" Order="Primary" x:Name="tbHome" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="White">
+            <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
+            <Label Text="" HeightRequest="10" x:Name="lblidUser" IsVisible="false"></Label>
+            <ListView x:Name="pagosList">
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Descripcion" BackgroundColor="#515151" TextColor="White" HorizontalTextAlignment="Center" WidthRequest="120" FontSize="15"/>
+                        <Label Text="Fecha" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="120" FontSize="15"/>
+                        <Label Text="Estado" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="120" FontSize="15"/>
+                    </StackLayout>
+
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Text="{Binding Descripcion}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="1" Text="{Binding Fecha}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="2" Text="{Binding Estado}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="" x:Name="StatusMessage" IsVisible="true"/>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

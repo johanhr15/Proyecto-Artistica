@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Proyecto_Artistica.MainPage">
+    
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
+        <StackLayout Grid.Row="1" Padding="10,20">
+            <Label Text="Iniciar Sesión" TextColor="#515151" HorizontalTextAlignment="Start" FontSize="18"/>
+            <Label Text="To make checkout quick and easy or to access an existing Wish List, please sign in below" TextColor="#515151" 
+                   HorizontalTextAlignment="Start" FontSize="12"/>
+            <Entry Placeholder="Nombre de Usuario" PlaceholderColor="#515151" FontSize="13" x:Name="txtUsuario"/>
+            <Entry Placeholder="Contraseña" PlaceholderColor="#515151" FontSize="13" x:Name="txtClave" IsPassword="True"/>
+            <StackLayout Orientation="Horizontal" HeightRequest="35">
+                <Button x:Name="btnIniciarSesion"  Text="Iniciar Sesión" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" FontSize="13" 
+                        WidthRequest="175" HeightRequest="35"/>
+                <Button Text="¿Olvidó su contraseña?" TextColor="blue" FontAttributes="Italic" VerticalOptions="Center" x:Name="btnEnviarClave" BackgroundColor="White" FontSize="12"
+                        HeightRequest="35"/>
+            </StackLayout>
+            <Label Text="" TextColor="Red" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center" x:Name="lblError"/>
+        </StackLayout>
+        <StackLayout Grid.Row="2" Padding="10,100">
+            <Label Text="Crear una cuenta" TextColor="#515151" HorizontalTextAlignment="Start" FontSize="18"/>
+            <Label Text="When you open a La Artistica account, you'll be able to access Express Checkout, create a Wish List and see your order history online." 
+                   TextColor="#515151" HorizontalTextAlignment="Start" FontSize="12"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Crear una Cuenta" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" 
+                        FontSize="13" 
+                        WidthRequest="175" HeightRequest="35"
+                        x:Name="btnCrear"/>
+            </StackLayout>
+        </StackLayout>
+
+
+    </Grid>
+
+</ContentPage>

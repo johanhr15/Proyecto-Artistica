@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto_Artistica.Android", "Proyecto Artistica\Proyecto Artistica.Android\Proyecto_Artistica.Android.csproj", "{0871543B-83EA-43A7-BCD3-88095D0AD080}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proyecto_Artistica", "Proyecto Artistica\Proyecto Artistica\Proyecto_Artistica.csproj", "{5CDF6691-1EA0-4860-8A14-63C9A20806C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0871543B-83EA-43A7-BCD3-88095D0AD080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0871543B-83EA-43A7-BCD3-88095D0AD080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0871543B-83EA-43A7-BCD3-88095D0AD080}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0871543B-83EA-43A7-BCD3-88095D0AD080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0871543B-83EA-43A7-BCD3-88095D0AD080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0871543B-83EA-43A7-BCD3-88095D0AD080}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5CDF6691-1EA0-4860-8A14-63C9A20806C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CDF6691-1EA0-4860-8A14-63C9A20806C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CDF6691-1EA0-4860-8A14-63C9A20806C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CDF6691-1EA0-4860-8A14-63C9A20806C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C126E81B-4360-469B-9E71-DA1EFCCE2BA8}
+	EndGlobalSection
+EndGlobal

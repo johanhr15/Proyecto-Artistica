@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_Artistica.AgregarProducto">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logout.png" Priority="3" Order="Primary" x:Name="tbLogout" />
+        <ToolbarItem IconImageSource="cart.png" Priority="2" Order="Primary" x:Name="tbCart" />
+        <ToolbarItem IconImageSource="home.png" Priority="1" Order="Primary" x:Name="tbHome" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
+            <Label Text="" HeightRequest="10" x:Name="lblidUser" IsVisible="false"></Label>
+            <StackLayout Grid.Row="1" Padding="10,20">
+                <Label Text="Agregar Producto" TextColor="#515151" HorizontalTextAlignment="Start" FontSize="18"/>
+
+                <Entry Placeholder="Nombre" PlaceholderColor="#515151" FontSize="13" x:Name="txtNombre"/>
+                <Entry Placeholder="Categoria" PlaceholderColor="#515151" FontSize="13" x:Name="txtCategoria"/>
+                <Entry Placeholder="Salon" PlaceholderColor="#515151" FontSize="13" x:Name="txtSalon"/>
+                <Entry Placeholder="Cantidad" PlaceholderColor="#515151" FontSize="13" x:Name="txtCantidad"/>
+                <Entry Placeholder="Precio" PlaceholderColor="#515151" FontSize="13" x:Name="txtPrecio" />
+                <Entry Placeholder="Proveedor" PlaceholderColor="#515151" FontSize="13" x:Name="txtProveedor" />
+                
+                <Label Text="" TextColor="Red" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center" x:Name="StatusMessage"/>
+
+                <Button Text="Agregar" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" 
+                        FontSize="13" 
+                        WidthRequest="175" HeightRequest="35"
+                        x:Name="btnCrear" HorizontalOptions="Center"/>
+
+            </StackLayout>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
