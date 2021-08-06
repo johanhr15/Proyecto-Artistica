@@ -11,7 +11,7 @@ namespace Proyecto_Artistica
         {
             InitializeComponent();
             UserRepository.Inicializador(filename);
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage()) { BarBackgroundColor = Color.FromHex("#0E547C"), BarTextColor = Color.White};
         }
 
         protected override void OnStart()

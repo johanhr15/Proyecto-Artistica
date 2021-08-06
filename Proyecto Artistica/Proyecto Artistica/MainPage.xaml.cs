@@ -31,7 +31,7 @@ namespace Proyecto_Artistica
             btnIniciarSesion.Clicked += BtnIniciarSesion_Clicked;
             btnEnviarClave.Clicked += BtnEnviarClave_Clicked;
             lblError.Text = "";
-
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private void BtnEnviarClave_Clicked(object sender, EventArgs e)

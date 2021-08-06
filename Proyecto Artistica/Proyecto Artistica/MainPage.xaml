@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Proyecto_Artistica.MainPage">
-
+             
     <Grid>
         <Image Source="texture2.png" Aspect="AspectFill"/>
         <Grid>
@@ -29,9 +29,9 @@
                     <Button Text="¿Olvidó su contraseña?" TextColor="White" FontAttributes="Italic" VerticalOptions="Center" x:Name="btnEnviarClave" BackgroundColor="#515151" FontSize="14"
                         HeightRequest="35"/>
                 </StackLayout>
-                <Label Text="" TextColor="Red" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center" x:Name="lblError"/>
+                <Label Text="" TextColor="Red" FontAttributes="Bold" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" x:Name="lblError"/>
             </StackLayout>
-            <StackLayout Grid.Row="2" Padding="10,40">
+            <StackLayout Grid.Row="2" Padding="10,70">
                 <Label Text="Crear una cuenta" TextColor="White" HorizontalTextAlignment="Start" FontSize="1"/>
                 <Label Text="When you open a La Artistica account, you'll be able to access Express Checkout, create a Wish List and see your order history online." 
                    TextColor="White"  HorizontalTextAlignment="Start" FontSize="15" FontAttributes="Bold"/>
