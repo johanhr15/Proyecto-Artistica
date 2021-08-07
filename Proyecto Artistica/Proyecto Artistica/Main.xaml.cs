@@ -15,7 +15,7 @@ namespace Proyecto_Artistica
     [DesignTimeVisible(false)]
     public partial class Main : ContentPage
     {
-        private const string monkeyUrl = "https://montemagno.com/monkeys.json";
+        private const string monkeyUrl = "https://api.jsonbin.io/b/610e254cd5667e403a3ad8ca";
         private readonly HttpClient httpClient = new HttpClient();
 
         public ObservableCollection<Monkey> Monkeys { get; set; } = new ObservableCollection<Monkey>();
@@ -33,7 +33,12 @@ namespace Proyecto_Artistica
             btnHistorialCompras.Clicked += BtnHistorialCompras_Clicked;
             btnHistorialGarantia.Clicked += BtnHistorialGarantia_Clicked;
             btnHistorialPagos.Clicked += BtnHistorialPagos_Clicked;
-           
+            MainCarouselView.ItemsSource = Monkeys;
+            Device.StartTimer(TimeSpan.FromSeconds(5), (Func<bool>)(() =>
+            {
+                MainCarouselView.Position = (MainCarouselView.Position + 1) % Monkeys.Count;
+                return true;
+            }));
         }
 
         protected async override void OnAppearing()
