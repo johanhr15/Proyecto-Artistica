@@ -24,7 +24,7 @@ namespace Proyecto_Artistica.Models
         [NotNull]
         public int numeroPago { get; set; }
 
-        [NotNull]
+        [MaxLength(50), NotNull]
         public string Estado { get; set; }
 
 

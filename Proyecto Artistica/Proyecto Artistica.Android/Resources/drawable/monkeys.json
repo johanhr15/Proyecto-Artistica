@@ -1,0 +1,29 @@
+[
+  {
+    "Name": "Baboon",
+    "Location": "Africa & Asia",
+    "Details": "Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae.",
+    "Image": "https://cintl.rencdn.com/newlaartistica/web/uploads/imagegallery/images/f0fdd04fbed3de86dc6113aec59ac16c86ac9f65.jpg",
+    "Population": 10000,
+    "Latitude": -8.783195,
+    "Longitude": 34.508523
+  },
+  {
+    "Name": "Capuchin Monkey",
+    "Location": "Central & South America",
+    "Details": "The capuchin monkeys are New World monkeys of the subfamily Cebinae. Prior to 2011, the subfamily contained only a single genus, Cebus.",
+    "Image": "https://cintl.rencdn.com/newlaartistica/web/uploads/imagegallery/images/55b1a7b7ddb1072271d31fbe39298f23e0768a43.jpg",
+    "Population": 23000,
+    "Latitude": 12.769013,
+    "Longitude": -85.602364
+  },
+  {
+    "Name": "Mooch",
+    "Location": "Seattle",
+    "Details": "An adorable Monkey who is traveling the world with Heather and live tweets his adventures @MotzMonkeys. His favorite platform is iOS by far and is excited for the new iPhone 6s!",
+    "Image": "https://cintl.rencdn.com/newlaartistica/web/uploads/imagegallery/images/de01ef4af486210526c4e375b82f83d10df1cbdb.jpg",
+    "Population": 1,
+    "Latitude": 47.608013,
+    "Longitude": -122.335167
+  }
+]

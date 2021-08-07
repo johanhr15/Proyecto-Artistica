@@ -18,7 +18,7 @@ namespace Proyecto_Artistica.Models
         public int usuarioID { get; set; }
 
         [MaxLength(100), NotNull]
-        public String Nombre { get; set; }
+        public string Nombre { get; set; }
 
         [NotNull]
         public int Cantidad { get; set; }
@@ -27,7 +27,7 @@ namespace Proyecto_Artistica.Models
         public decimal Precio { get; set; }
 
         [MaxLength(1), NotNull]
-        public String Estado { get; set; }
+        public string Estado { get; set; }
 
     }
 }

@@ -21,7 +21,7 @@ namespace Proyecto_Artistica.Models
         public int facturaId { get; set; }
 
         [MaxLength(500), NotNull]
-        public String Descripcion { get; set; }
+        public string Descripcion { get; set; }
 
         [MaxLength(1), NotNull]
         public string Estado { get; set; }
@@ -30,7 +30,7 @@ namespace Proyecto_Artistica.Models
         public DateTime Fecha { get; set; }
 
         [MaxLength(50)]
-        public String Resolucion { get; set; }
+        public string Resolucion { get; set; }
 
        
     }

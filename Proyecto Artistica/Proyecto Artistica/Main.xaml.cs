@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Collections.ObjectModel;
+using System.Net.Http;
+using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,11 +15,15 @@ namespace Proyecto_Artistica
     [DesignTimeVisible(false)]
     public partial class Main : ContentPage
     {
-       
+        private const string monkeyUrl = "https://montemagno.com/monkeys.json";
+        private readonly HttpClient httpClient = new HttpClient();
+
+        public ObservableCollection<Monkey> Monkeys { get; set; } = new ObservableCollection<Monkey>();
 
         public Main(int userId)
         {
             InitializeComponent();
+            BindingContext = this;
             lblidUser.Text = userId.ToString();
             btnComprar.Clicked += BtnComprar_Clicked;
             btnAbonar.Clicked += BtnAbonar_Clicked;
@@ -28,6 +34,21 @@ namespace Proyecto_Artistica
             btnHistorialGarantia.Clicked += BtnHistorialGarantia_Clicked;
             btnHistorialPagos.Clicked += BtnHistorialPagos_Clicked;
            
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var monkeyJson = await httpClient.GetStringAsync(monkeyUrl);
+            var monkeys = JsonConvert.DeserializeObject<Monkey[]>(monkeyJson);
+
+            Monkeys.Clear();
+
+            foreach (var monkey in monkeys)
+            {
+                Monkeys.Add(monkey);
+            }
         }
 
         private async void BtnHistorialPagos_Clicked(object sender, EventArgs e)

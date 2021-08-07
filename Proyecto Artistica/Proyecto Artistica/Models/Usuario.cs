@@ -12,13 +12,13 @@ namespace Proyecto_Artistica.Models
         public int usuarioId { get; set; }
 
         [MaxLength(50), NotNull]
-        public String Nombre { get; set; }
+        public string Nombre { get; set; }
 
         [MaxLength(100), NotNull]
-        public String Apellidos { get; set; }
+        public string Apellidos { get; set; }
 
-        [MaxLength(50), NotNull]
-        public String userName { get; set; }
+        [MaxLength(50), Unique, NotNull]
+        public string userName { get; set; }
 
         [MaxLength(50), Unique, NotNull]
         public string Email { get; set; }
