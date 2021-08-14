@@ -621,7 +621,7 @@ namespace Proyecto_Artistica.Models
                 List<Pago> pagosList = new List<Pago>();
                 foreach (var aux in pagos) 
                 {
-                    if (GetVentaId(aux.ventaId).ventaId == userId && aux.Estado.Equals("P")) 
+                    if (GetVentaId(aux.ventaId).usuarioId == userId && aux.Estado.Equals("P")) 
                     {
                         pagosList.Add(aux);
                     }  
