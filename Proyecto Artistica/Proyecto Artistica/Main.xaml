@@ -28,14 +28,14 @@
                 <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
                 <Label Text="" x:Name="lblidUser" IsVisible="false" />
                 <!-- This is for the IndicatorView video  -->
-                <StackLayout Grid.Row="1" Padding="0,20,0,-400" VerticalOptions="Center">
-                    <IndicatorView x:Name="monkeysIndicator" IndicatorColor="LightGray" SelectedIndicatorColor="Gray" IndicatorsShape="Square" Padding="0,0,0,0"/>
-                    <CarouselView ItemsSource="{Binding Monkeys}" IndicatorView="{x:Reference monkeysIndicator}" x:Name="MainCarouselView">
+                <StackLayout Grid.Row="1" Padding="0,20,0,-450" VerticalOptions="Center">
+                    <IndicatorView x:Name="Indicator" IndicatorColor="LightGray" SelectedIndicatorColor="Gray" IndicatorsShape="Square" Padding="0,0,0,0"/>
+                    <CarouselView x:Name="MainCarouselView" IndicatorView="{x:Reference Indicator}">
                         <CarouselView.ItemTemplate>
                             <DataTemplate>
                                 <Frame Padding="10" CornerRadius="0">
                                     <StackLayout>
-                                        <Image Source="{Binding Image}" Aspect="Fill" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                                        <Image Source="{Binding .}" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill"/>
                                     </StackLayout>
                                 </Frame>
                             </DataTemplate>

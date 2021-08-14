@@ -21,16 +21,16 @@ namespace Proyecto_Artistica
         public EditarGarantias()
         {
             InitializeComponent();
-            btnUpdate.Clicked += BtnUpdate_Clicked;
+            btnEditar.Clicked += btnEditar_Clicked;
         }
 
-        private void BtnUpdate_Clicked(object sender, EventArgs e)
+        private void btnEditar_Clicked(object sender, EventArgs e)
         {
             try
             {
                 StatusMessage.Text = string.Empty;
-                UserRepository.Instancia.UpdateGarantia(Convert.ToInt32(txtActualizar.Text), txtResolucionNueva.Text,txtEstado.Text);
-                StatusMessage.Text = "ID " + txtActualizar.Text + " actualizado correctamente!";
+                UserRepository.Instancia.UpdateGarantia(Convert.ToInt32(txtID.Text), Int32.Parse(txtVentaId.Text), Int32.Parse(txtProductoId.Text), Int32.Parse(txtFacturaId.Text), txtDescripcion.Text, txtEstado.Text, fecha.Date.Date, txtresolucion.Text);
+                StatusMessage.Text = "ID " + txtID.Text + " actualizado correctamente!";
                 StatusMessage.TextColor = Color.Green;
             }
             catch (Exception)

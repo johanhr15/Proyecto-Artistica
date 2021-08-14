@@ -7,8 +7,9 @@
         <StackLayout>
         <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
             <StackLayout Padding="10,20">
-                <Label Text="Crear Producto" TextColor="#515151" HorizontalTextAlignment="Start" FontSize="18"/>
-          
+                <Label Text="Editar Producto" TextColor="#515151" HorizontalTextAlignment="Start" FontSize="18"/>
+
+                <Entry Placeholder="ID" PlaceholderColor="#515151" FontSize="13" x:Name="txtID"/>
                 <Entry Placeholder="Nombre" PlaceholderColor="#515151" FontSize="13" x:Name="txtNombre"/>
                 <Entry Placeholder="Categoria" PlaceholderColor="#515151" FontSize="13" x:Name="txtCat"/>
                 <Entry Placeholder="Salon" PlaceholderColor="#515151" FontSize="13" x:Name="txtSalon"/>

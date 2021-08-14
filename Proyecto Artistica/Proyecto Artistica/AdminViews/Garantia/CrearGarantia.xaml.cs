@@ -28,7 +28,7 @@ namespace Proyecto_Artistica
 
         private async void BtnCrear_Clicked(object sender, EventArgs e)
         {
-            UserRepository.Instancia.AddNewGarantia(Int32.Parse(txtVentaId.Text), Int32.Parse(txtProductoId.Text), Int32.Parse(txtFacturaId.Text), txtDescripcion.Text, txtEstado.Text,fecha.Date.Date);
+            UserRepository.Instancia.AddNewGarantiaAdmin(Int32.Parse(txtVentaId.Text), Int32.Parse(txtProductoId.Text), Int32.Parse(txtFacturaId.Text), txtDescripcion.Text, txtEstado.Text,fecha.Date.Date,txtresolucion.Text);
             StatusMessage.Text = UserRepository.Instancia.EstadoMensaje;
             if (StatusMessage.Text.Contains("Cantidad"))
             {

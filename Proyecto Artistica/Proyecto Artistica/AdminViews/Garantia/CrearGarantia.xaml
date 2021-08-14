@@ -19,6 +19,7 @@
             <Entry Placeholder="# de Factura" PlaceholderColor="#515151" FontSize="13" x:Name="txtFacturaId"/>
             <Entry Placeholder="Descripcion:" PlaceholderColor="#515151" FontSize="13" x:Name="txtDescripcion"/>
             <Entry Placeholder="Estado" PlaceholderColor="#515151" FontSize="13" x:Name="txtEstado"/>
+            <Entry Placeholder="Resolucion" PlaceholderColor="#515151" FontSize="13" x:Name="txtresolucion"/>
             <DatePicker MinimumDate="01/01/2010"
             MaximumDate="12/31/2030"
             Date="1/1/2010" x:Name="fecha"/>

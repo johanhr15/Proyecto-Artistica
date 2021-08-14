@@ -32,7 +32,7 @@ namespace Proyecto_Artistica
         private async void BtnCrear_Clicked(object sender, EventArgs e)
         {
             StatusMessage.Text = string.Empty;
-            UserRepository.Instancia.AddNewUsuario(txtUsuario.Text,txtNombre.Text, txtApellidos.Text, txtEmail.Text,txtClave.Text,"A");
+            UserRepository.Instancia.AddNewUsuario(txtUsuario.Text,txtNombre.Text, txtApellidos.Text, txtEmail.Text,txtClave.Text,"U");
             StatusMessage.Text = UserRepository.Instancia.EstadoMensaje;
             if (StatusMessage.Text.Contains("Cantidad")) 
             {

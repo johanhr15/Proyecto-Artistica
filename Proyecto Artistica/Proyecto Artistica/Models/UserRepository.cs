@@ -71,7 +71,7 @@ namespace Proyecto_Artistica.Models
             return result;
         }
 
-        public int UpdateUsuario(int id, string username, string nombre, string apellidos, string email, string password)
+        public int UpdateUsuario(int id, string username, string nombre, string apellidos, string email, string password, string type)
         {
             int result = 0;
             try
@@ -83,7 +83,8 @@ namespace Proyecto_Artistica.Models
                     Nombre = nombre,
                     Apellidos = apellidos,
                     Email = email,
-                    Password = password
+                    Password = password,
+                    Type = type
                 });
                 result = con.Update(usuario);
                 EstadoMensaje = string.Format("Cantidad filas : {0}", result);
@@ -129,28 +130,6 @@ namespace Proyecto_Artistica.Models
                 Usuario usuario = (new Usuario
                 {
                     usuarioId = UserId
-                });
-                result = con.Delete(usuario);
-                EstadoMensaje = string.Format("Cantidad filas : {0}", result);
-            }
-            catch (Exception e)
-            { EstadoMensaje = e.Message; }
-            return result;
-        }
-
-        public int DeleteUsuario(int id, string username, string nombre, string apellidos, string email, string password)
-        {
-            int result = 0;
-            try
-            {
-                Usuario usuario = (new Usuario 
-                {
-                    usuarioId = id,
-                    userName = username,
-                    Nombre = nombre,
-                    Apellidos = apellidos,
-                    Email = email,
-                    Password = password
                 });
                 result = con.Delete(usuario);
                 EstadoMensaje = string.Format("Cantidad filas : {0}", result);
@@ -250,7 +229,7 @@ namespace Proyecto_Artistica.Models
             int result = 0;
             try
             {
-                
+
                 result = con.Update(producto);
                 EstadoMensaje = string.Format("Cantidad filas : {0}", result);
             }
@@ -259,7 +238,7 @@ namespace Proyecto_Artistica.Models
             return result;
         }
 
-        public int DeleteProducto(int id, string nombre, string categoria, string salon, int cantidad, decimal precio, string proveedor, string image)
+        public int UpdateProductoAdmin(int id, string nombre, string categoria, string salon, int cantidad, decimal precio, string proveedor, string image)
         {
             int result = 0;
             try
@@ -275,7 +254,7 @@ namespace Proyecto_Artistica.Models
                     Proveedor = proveedor,
                     Image = image
                 });
-                result = con.Delete(producto);
+                result = con.Update(producto);
                 EstadoMensaje = string.Format("Cantidad filas : {0}", result);
             }
             catch (Exception e)
@@ -458,9 +437,7 @@ namespace Proyecto_Artistica.Models
         }
 
 
-
-
-        public int AddNewGarantia(int ventaid, int productoId,int facturaId,string descripcion, string estado, DateTime fecha)
+        public int AddNewGarantia(int ventaid, int productoId, int facturaId, string descripcion, string estado, DateTime fecha)
         {
             int result = 0;
             try
@@ -473,6 +450,28 @@ namespace Proyecto_Artistica.Models
                     Descripcion = descripcion,
                     Estado = estado,
                     Fecha = fecha
+                });
+                EstadoMensaje = string.Format("Cantidad filas : {0}", result);
+            }
+            catch (Exception e)
+            { EstadoMensaje = e.Message; }
+            return result;
+        }
+
+        public int AddNewGarantiaAdmin(int ventaid, int productoId,int facturaId,string descripcion, string estado, DateTime fecha, string resolucion)
+        {
+            int result = 0;
+            try
+            {
+                result = con.Insert(new Garantia
+                {
+                    ventaId = ventaid,
+                    facturaId = facturaId,
+                    productoId = productoId,
+                    Descripcion = descripcion,
+                    Estado = estado,
+                    Fecha = fecha,
+                    Resolucion = resolucion
                 });
                 EstadoMensaje = string.Format("Cantidad filas : {0}", result);
             }
@@ -497,7 +496,7 @@ namespace Proyecto_Artistica.Models
             return result;
         }
 
-        public int UpdateGarantia(int id, string resolucion,string state)
+        public int UpdateGarantia(int id, int ventaid, int productoId, int facturaId, string descripcion, string estado, DateTime fecha, string resolucion)
         {
             int result = 0;
             try
@@ -505,7 +504,12 @@ namespace Proyecto_Artistica.Models
                 Garantia garantia = (new Garantia
                 {
                     garantiaId = id,
-                    Estado = state,
+                    ventaId = ventaid,
+                    facturaId = facturaId,
+                    productoId = productoId,
+                    Descripcion = descripcion,
+                    Estado = estado,
+                    Fecha = fecha,
                     Resolucion = resolucion
                 });
                 result = con.Update(garantia);

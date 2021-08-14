@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Proyecto_Artistica.EditarUsuario">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
+            <StackLayout Padding="10,20">
+            <Label Text="Editar Usuario" TextColor="#515151" HorizontalTextAlignment="Start" FontSize="18"/>
+
+                <Entry  x:Name="txtActualizarId" Placeholder="Id" PlaceholderColor="#515151" FontSize="13"/>
+                <Entry  x:Name="txtActualizarNombre" Placeholder="Nombre" PlaceholderColor="#515151" FontSize="13"/>
+                <Entry  x:Name="txtActualizarApellidos" Placeholder="Apellidos" PlaceholderColor="#515151" FontSize="13"/>
+                <Entry  x:Name="txtActualizarUsuario" Placeholder="Usuario" PlaceholderColor="#515151" FontSize="13"/>
+                <Entry  x:Name="txtActualizarEmail" Placeholder="Email" PlaceholderColor="#515151" FontSize="13"/>
+                <Entry  x:Name="txtActualizarPassword" Placeholder="Password" PlaceholderColor="#515151" FontSize="13"/>
+                <Entry  x:Name="txtActualizarType" Placeholder="Type" PlaceholderColor="#515151" FontSize="13"/>
+                
+            <Label Text="" TextColor="Red" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center" x:Name="StatusMessage"/>
+
+                   <Button Text="Editar" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" 
+                        FontSize="13" 
+                        WidthRequest="175" HeightRequest="35"
+                        x:Name="btnEditar" HorizontalOptions="Center"/>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

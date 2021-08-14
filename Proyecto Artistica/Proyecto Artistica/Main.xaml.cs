@@ -20,8 +20,16 @@ namespace Proyecto_Artistica
 
         public ObservableCollection<Monkey> Monkeys { get; set; } = new ObservableCollection<Monkey>();
 
+        
+
         public Main(int userId)
         {
+            var images = new List<string> { "C:/Users/eherreran967/Desktop/Prod/Proyecto-Artistica/Proyecto Artistica/Proyecto Artistica.Android/Resources/drawable/home1.JPG",
+                                            "C:/Users/eherreran967/Desktop/Prod/Proyecto-Artistica/Proyecto Artistica/Proyecto Artistica.Android/Resources/drawable/home2.JPG",
+                                            "C:/Users/eherreran967/Desktop/Prod/Proyecto-Artistica/Proyecto Artistica/Proyecto Artistica.Android/Resources/drawable/home3.JPG",
+                                            "C:/Users/eherreran967/Desktop/Prod/Proyecto-Artistica/Proyecto Artistica/Proyecto Artistica.Android/Resources/drawable/home4.JPG",
+                                            "Proyecto-Artistica/Proyecto Artistica/Proyecto Artistica.Android/Resources/drawable/home5.JPG"};
+
             InitializeComponent();
             BindingContext = this;
             lblidUser.Text = userId.ToString();
@@ -33,10 +41,10 @@ namespace Proyecto_Artistica
             btnHistorialCompras.Clicked += BtnHistorialCompras_Clicked;
             btnHistorialGarantia.Clicked += BtnHistorialGarantia_Clicked;
             btnHistorialPagos.Clicked += BtnHistorialPagos_Clicked;
-            MainCarouselView.ItemsSource = Monkeys;
+            MainCarouselView.ItemsSource = images;
             Device.StartTimer(TimeSpan.FromSeconds(5), (Func<bool>)(() =>
             {
-                MainCarouselView.Position = (MainCarouselView.Position + 1) % Monkeys.Count;
+                MainCarouselView.Position = (MainCarouselView.Position + 1) % images.Count;
                 return true;
             }));
         }
