@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Proyecto_Artistica.VerUsuarios">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
+            <Button Text="Actualizar" x:Name="btnAct"/>
+            <ListView x:Name="listaUsuarios" >
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="usuarioId" BackgroundColor="#515151" TextColor="White" HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Nombre" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Apellidos" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="userName" BackgroundColor="#515151" TextColor="White" HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Email" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Password" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Type" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                    </StackLayout>
+
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Grid.Column="0" Text="{Binding usuarioId}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="1" Text="{Binding Nombre}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="2" Text="{Binding Apellidos}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="3" Text="{Binding userName}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="4" Text="{Binding Email}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="5" Text="{Binding Password}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="6" Text="{Binding Type}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="" x:Name="StatusMessage" IsVisible="true"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

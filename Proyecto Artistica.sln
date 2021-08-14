@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto_Artistica.Android"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proyecto_Artistica", "Proyecto Artistica\Proyecto Artistica\Proyecto_Artistica.csproj", "{5CDF6691-1EA0-4860-8A14-63C9A20806C7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6F0C4EAF-01B1-4C27-82AE-016E1DCBE50A}"
+	ProjectSection(SolutionItems) = preProject
+		HistorialGarantia.xaml = HistorialGarantia.xaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -54,11 +54,6 @@ namespace Proyecto_Artistica
             {
                 Monkeys.Add(monkey);
             }
-            Device.StartTimer(TimeSpan.FromSeconds(5), (Func<bool>)(() =>
-            {
-                MainCarouselView.Position = (MainCarouselView.Position + 1) % Monkeys.Count;
-                return true;
-            }));
         }
 
         private async void BtnHistorialPagos_Clicked(object sender, EventArgs e)

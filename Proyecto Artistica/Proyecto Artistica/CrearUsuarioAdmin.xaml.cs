@@ -13,36 +13,31 @@ using Proyecto_Artistica.Models;
 using SQLite;
 using System.Data;
 using Proyecto_Artistica;
-
 namespace Proyecto_Artistica
 {
-    [DesignTimeVisible(false)]
-    public partial class CreateUsuario : ContentPage
+    public partial class CrearUsuarioAdmin : ContentPage
     {
-        
-
-        public CreateUsuario()
+        public CrearUsuarioAdmin()
         {
             InitializeComponent();
             StatusMessage.Text = "";
             btnCrear.Clicked += BtnCrear_Clicked;
-         
+
         }
 
         private async void BtnCrear_Clicked(object sender, EventArgs e)
         {
             StatusMessage.Text = string.Empty;
-            UserRepository.Instancia.AddNewUsuario(txtUsuario.Text,txtNombre.Text, txtApellidos.Text, txtEmail.Text,txtClave.Text,"A");
+            UserRepository.Instancia.AddNewUsuario(txtUsuario.Text, txtNombre.Text, txtApellidos.Text, txtEmail.Text, txtClave.Text, txtTipo.Text);
             StatusMessage.Text = UserRepository.Instancia.EstadoMensaje;
-            if (StatusMessage.Text.Contains("Cantidad")) 
+            if (StatusMessage.Text.Contains("Cantidad"))
             {
                 clean();
-                await Navigation.PushAsync(new MainPage());
+                await Navigation.PushAsync(new UsuariosMenu());
             }
 
         }
-
-        private void clean() 
+        private void clean()
         {
             txtUsuario.Text = "";
             txtNombre.Text = "";
@@ -50,6 +45,7 @@ namespace Proyecto_Artistica
             txtEmail.Text = "";
             txtClave.Text = "";
             StatusMessage.Text = "";
+            txtTipo.Text =  "";
         }
     }
 }

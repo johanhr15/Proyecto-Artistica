@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Proyecto_Artistica.EditarUsuario">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry  x:Name="txtActualizarNombre" Placeholder="Nombre"/>
+            <Entry  x:Name="txtActualizarApellidos" Placeholder="Apellidos"/>
+            <Entry  x:Name="txtActualizarUsuario" Placeholder="Usuario"/>
+            <Entry  x:Name="txtActualizarEmail" Placeholder="Email"/>
+            <Entry  x:Name="txtActualizarPassword" Placeholder="Password"/>
+            <Entry  x:Name="txtActualizarType" Placeholder="Type"/>
+            <Entry  x:Name="txtActualizarId" Placeholder="Id"/>
+            <Button Text="Actualizar Usuarios" x:Name="BtnUpdate"  BackgroundColor="DarkBlue" TextColor="White"/>
+        <Label x:Name="StatusMessage" FontSize="Medium" />
+        <Grid x:Name="titulos" IsVisible="false">
+            <Label Grid.Row="0" Grid.Column="0" Text="Id" FontAttributes="Bold" />
+        </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

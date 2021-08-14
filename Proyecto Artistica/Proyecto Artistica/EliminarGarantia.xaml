@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Proyecto_Artistica.EliminarGarantia">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
+        <StackLayout Grid.Row="1" Padding="10,20">
+            <Label Text="Eliminar Garantia" TextColor="#515151" HorizontalTextAlignment="Start" FontSize="18"/>
+          
+            <Entry Placeholder="Id Garantia" PlaceholderColor="#515151" FontSize="13" x:Name="txtId"/>
+           
+            <Label Text="" TextColor="Red" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center" x:Name="StatusMessage"/>
+        
+                <Button Text="Eliminar" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" 
+                        FontSize="13" 
+                        WidthRequest="175" HeightRequest="35"
+                        x:Name="btnEliminar" HorizontalOptions="Center"/>
+       
+        </StackLayout>
+
+
+    </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -16,39 +16,32 @@ using Proyecto_Artistica;
 
 namespace Proyecto_Artistica
 {
-    [DesignTimeVisible(false)]
-    public partial class CreateUsuario : ContentPage
+    public partial class CrearGarantia : ContentPage
     {
-        
-
-        public CreateUsuario()
+        public CrearGarantia()
         {
             InitializeComponent();
-            StatusMessage.Text = "";
             btnCrear.Clicked += BtnCrear_Clicked;
-         
+            StatusMessage.Text = "";
+
         }
 
         private async void BtnCrear_Clicked(object sender, EventArgs e)
         {
-            StatusMessage.Text = string.Empty;
-            UserRepository.Instancia.AddNewUsuario(txtUsuario.Text,txtNombre.Text, txtApellidos.Text, txtEmail.Text,txtClave.Text,"A");
+            UserRepository.Instancia.AddNewGarantia(Int32.Parse(txtVentaId.Text), Int32.Parse(txtProductoId.Text), Int32.Parse(txtFacturaId.Text), txtDescripcion.Text, txtEstado.Text,fecha.Date.Date);
             StatusMessage.Text = UserRepository.Instancia.EstadoMensaje;
-            if (StatusMessage.Text.Contains("Cantidad")) 
+            if (StatusMessage.Text.Contains("Cantidad"))
             {
                 clean();
-                await Navigation.PushAsync(new MainPage());
+                await Navigation.PushAsync(new GarantiasMenu());
             }
-
         }
-
-        private void clean() 
+        private void clean()
         {
-            txtUsuario.Text = "";
-            txtNombre.Text = "";
-            txtApellidos.Text = "";
-            txtEmail.Text = "";
-            txtClave.Text = "";
+            txtVentaId.Text = "";
+            txtProductoId.Text = "";
+            txtDescripcion.Text = "";
+            txtFacturaId.Text = "";
             StatusMessage.Text = "";
         }
     }

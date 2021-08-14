@@ -1,22 +1,23 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Linq;
+using Xamarin.Forms;
 
 namespace Proyecto_Artistica.Models
 {
-    class UserRepository
+    class ProductRepository
     {
         private SQLiteConnection con;
-        private static UserRepository instancia;
-        public static UserRepository Instancia
+        private static ProductRepository instanciaProducto;
+        public static ProductRepository InstanciaProducto
         {
             get
             {
-                if (instancia == null)
-                    throw new Exception("Debe llamar al inicializador, acción detenida");
-                return instancia;
+                if (instanciaProducto == null)
+                    throw new Exception("Debe llamar al inicializador, acciÃ³n detenida");
+                return instanciaProducto;
             }
         }
         public static void Inicializador(String filename)
@@ -25,26 +26,42 @@ namespace Proyecto_Artistica.Models
             {
                 throw new ArgumentException();
             }
-            if (instancia != null)
+            if (instanciaProducto != null)
             {
-                instancia.con.Close();
+                instanciaProducto.con.Close();
             }
-            
-            instancia = new UserRepository(filename);
+
+            instanciaProducto = new ProductRepository(filename);
         }
-        private UserRepository(String dbPath)
+
+        internal void POST(string text1, string text2, string text3, string text4, string text5, string text6, string text7, string text8, string text9, string text10, string text11, Entry txtActualizarPrecio, Entry txtActualizarProveedor, Entry txtActualizarImage, int v)
         {
-            con = new SQLiteConnection(dbPath); 
+            throw new NotImplementedException();
+        }
+
+        internal void POST(string text1, string text2, string text3, string text4, string text5, string text6, string text7, string text8, int v)
+        {
+            throw new NotImplementedException();
+        }
+
+        private ProductRepository(String dbPath)
+        {
+            con = new SQLiteConnection(dbPath);
             //con.DropTable<Venta>();
             //con.DropTable<Pago>();
             //con.DropTable<Garantia>();
-           
+
             con.CreateTable<Usuario>();
             con.CreateTable<Venta>();
             con.CreateTable<Producto>();
             con.CreateTable<Garantia>();
             con.CreateTable<Pago>();
             con.CreateTable<Carrito>();
+        }
+
+        internal void PUT(string text1, string text2, string text3, string text4, string text5, string text6, string text7, string text8, string text9, string text10, string text11, Entry txtActualizarPrecio, Entry txtActualizarProveedor, Entry txtActualizarImage, int v)
+        {
+            throw new NotImplementedException();
         }
 
         public string EstadoMensaje;
@@ -63,12 +80,17 @@ namespace Proyecto_Artistica.Models
                     Password = password,
                     Type = type
 
-                }) ;
+                });
                 EstadoMensaje = string.Format("Cantidad filas : {0}", result);
             }
             catch (Exception e)
             { EstadoMensaje = e.Message; }
             return result;
+        }
+
+        internal void PUT(string text1, string text2, string text3, string text4, string text5, string text6, string text7, string text8, int v)
+        {
+            throw new NotImplementedException();
         }
 
         public int UpdateUsuario(int id, string username, string nombre, string apellidos, string email, string password)
@@ -92,50 +114,15 @@ namespace Proyecto_Artistica.Models
             { EstadoMensaje = e.Message; }
             return result;
         }
-        public bool ActualizarPermisos(int id,string tipo)
+
+        internal object Get()
         {
-            bool result = false;
-            int resultado = 0;
-            try
-            {
-                var usuario = con.Table<Usuario>();
-                foreach (var aux in usuario)
-                {
-                    if (aux.usuarioId == id)
-                    {
-                        resultado = 0;
-                        aux.Type = tipo;
-                        try
-                        {
-                            resultado = con.Update(aux);
-                            result = true;
-                        }
-                        catch (Exception e)
-                        { EstadoMensaje = e.Message; }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                EstadoMensaje = e.Message;
-            }
-            return result;
+            throw new NotImplementedException();
         }
-        public int DeleteUser(int UserId)
+
+        internal void DEL(int v)
         {
-            int result = 0;
-            try
-            {
-                Usuario usuario = (new Usuario
-                {
-                    usuarioId = UserId
-                });
-                result = con.Delete(usuario);
-                EstadoMensaje = string.Format("Cantidad filas : {0}", result);
-            }
-            catch (Exception e)
-            { EstadoMensaje = e.Message; }
-            return result;
+            throw new NotImplementedException();
         }
 
         public int DeleteUsuario(int id, string username, string nombre, string apellidos, string email, string password)
@@ -143,7 +130,7 @@ namespace Proyecto_Artistica.Models
             int result = 0;
             try
             {
-                Usuario usuario = (new Usuario 
+                Usuario usuario = (new Usuario
                 {
                     usuarioId = id,
                     userName = username,
@@ -175,15 +162,15 @@ namespace Proyecto_Artistica.Models
 
         public int GetUsuario(string username, string password)
         {
-           
+
             try
             {
 
                 var usuarios = con.Table<Usuario>();
 
-                foreach (var aux in usuarios) 
+                foreach (var aux in usuarios)
                 {
-                    if (aux.userName.Equals(username) && aux.Password.Equals(password)) 
+                    if (aux.userName.Equals(username) && aux.Password.Equals(password))
                     {
                         return aux.usuarioId;
                     }
@@ -195,32 +182,6 @@ namespace Proyecto_Artistica.Models
 
             return 0;
         }
-        public string GetPermiso(string username, string password)
-        {
-
-            try
-            {
-
-                var usuarios = con.Table<Usuario>();
-
-                foreach (var aux in usuarios)
-                {
-                    if (aux.userName.Equals(username) && aux.Password.Equals(password))
-                    {
-                        return aux.Type;
-                    }
-                }
-
-            }
-            catch (Exception e)
-            { EstadoMensaje = e.Message; }
-
-            return "N";
-        }
-
-
-
-
 
         public int AddNewProducto(string nombre, string categoria, string salon, int cantidad, decimal precio, string proveedor, string image)
         {
@@ -237,7 +198,7 @@ namespace Proyecto_Artistica.Models
                     Proveedor = proveedor,
                     Image = image
 
-                }) ;
+                });
                 EstadoMensaje = string.Format("Cantidad filas : {0}", result);
             }
             catch (Exception e)
@@ -250,7 +211,7 @@ namespace Proyecto_Artistica.Models
             int result = 0;
             try
             {
-                
+
                 result = con.Update(producto);
                 EstadoMensaje = string.Format("Cantidad filas : {0}", result);
             }
@@ -264,7 +225,7 @@ namespace Proyecto_Artistica.Models
             int result = 0;
             try
             {
-               Producto producto = (new Producto
+                Producto producto = (new Producto
                 {
                     productoId = id,
                     Categoria = categoria,
@@ -274,23 +235,6 @@ namespace Proyecto_Artistica.Models
                     Precio = precio,
                     Proveedor = proveedor,
                     Image = image
-                });
-                result = con.Delete(producto);
-                EstadoMensaje = string.Format("Cantidad filas : {0}", result);
-            }
-            catch (Exception e)
-            { EstadoMensaje = e.Message; }
-            return result;
-        }
-
-        public int DeleteProduct(int productoID)
-        {
-            int result = 0;
-            try
-            {
-                Producto producto = (new Producto
-                {
-                    productoId = productoID
                 });
                 result = con.Delete(producto);
                 EstadoMensaje = string.Format("Cantidad filas : {0}", result);
@@ -317,8 +261,8 @@ namespace Proyecto_Artistica.Models
         {
             try
             {
-                var producto= con.Table<Producto>();
-                foreach (var aux in producto) 
+                var producto = con.Table<Producto>();
+                foreach (var aux in producto)
                 {
                     if (aux.productoId == id)
                     {
@@ -336,19 +280,20 @@ namespace Proyecto_Artistica.Models
 
 
 
-        public int AddNewVenta(int id, DateTime fecha, decimal total,decimal monto, int pagos, decimal interes)
+        public int AddNewVenta(int id, DateTime fecha, decimal total, decimal monto, int pagos, decimal interes)
         {
             int result = 0;
             try
             {
                 result = con.Insert(new Venta
                 {
-                    usuarioId=id,
+                    usuarioId = id,
                     Fecha = fecha,
                     Total = total,
                     Monto = monto,
                     Pagos = pagos,
                     Interes = interes
+
 
                 });
                 EstadoMensaje = string.Format("Cantidad filas : {0}", result);
@@ -377,9 +322,9 @@ namespace Proyecto_Artistica.Models
             {
                 List<Venta> ventaLista = new List<Venta>();
                 var venta = con.Table<Venta>();
-                foreach (var aux in venta) 
+                foreach (var aux in venta)
                 {
-                    if (aux.usuarioId == id && aux.Fecha.AddYears(1) >= fecha) 
+                    if (aux.usuarioId == id && aux.Fecha.AddYears(1) >= fecha)
                     {
                         ventaLista.Add(aux);
                     }
@@ -421,8 +366,8 @@ namespace Proyecto_Artistica.Models
             try
             {
                 var venta = con.Table<Venta>();
-               
-                foreach (var aux in venta) 
+
+                foreach (var aux in venta)
                 {
                     if (aux.usuarioId == id)
                         ventaList = aux.ventaId;
@@ -438,7 +383,7 @@ namespace Proyecto_Artistica.Models
 
         public Venta GetVentaId(int id)
         {
-           
+
             try
             {
                 var venta = con.Table<Venta>();
@@ -460,7 +405,7 @@ namespace Proyecto_Artistica.Models
 
 
 
-        public int AddNewGarantia(int ventaid, int productoId,int facturaId,string descripcion, string estado, DateTime fecha)
+        public int AddNewGarantia(int ventaid, int productoId, int facturaId, string descripcion, string estado, DateTime fecha)
         {
             int result = 0;
             try
@@ -480,24 +425,8 @@ namespace Proyecto_Artistica.Models
             { EstadoMensaje = e.Message; }
             return result;
         }
-        public int DeleteGarantia(int GarantiaId)
-        {
-            int result = 0;
-            try
-            {
-                Garantia garantia = (new Garantia
-                {
-                    garantiaId = GarantiaId
-                });
-                result = con.Delete(garantia);
-                EstadoMensaje = string.Format("Cantidad filas : {0}", result);
-            }
-            catch (Exception e)
-            { EstadoMensaje = e.Message; }
-            return result;
-        }
 
-        public int UpdateGarantia(int id, string resolucion,string state)
+        public int UpdateGarantia(int id, string resolucion)
         {
             int result = 0;
             try
@@ -505,7 +434,6 @@ namespace Proyecto_Artistica.Models
                 Garantia garantia = (new Garantia
                 {
                     garantiaId = id,
-                    Estado = state,
                     Resolucion = resolucion
                 });
                 result = con.Update(garantia);
@@ -534,14 +462,14 @@ namespace Proyecto_Artistica.Models
             try
             {
                 List<Garantia> garantias = new List<Garantia>();
-                var garantia= con.Table<Garantia>();
-                foreach (var aux in garantia) 
+                var garantia = con.Table<Garantia>();
+                foreach (var aux in garantia)
                 {
                     if (GetVentaId(aux.ventaId).usuarioId == id)
                     {
                         garantias.Add(aux);
                     }
-                
+
                 }
                 return garantias;
             }
@@ -551,11 +479,6 @@ namespace Proyecto_Artistica.Models
             }
             return Enumerable.Empty<Garantia>();
         }
-
-
-
-
-
 
         public int AddNewPago(int ventaid, decimal monto, int numeropago, DateTime fecha)
         {
@@ -594,14 +517,14 @@ namespace Proyecto_Artistica.Models
         {
             try
             {
-               var pagos = con.Table<Pago>();
+                var pagos = con.Table<Pago>();
                 List<Pago> pagosList = new List<Pago>();
-                foreach (var aux in pagos) 
+                foreach (var aux in pagos)
                 {
-                    if (GetVentaId(aux.ventaId).ventaId == userId && aux.Estado.Equals("P")) 
+                    if (GetVentaId(aux.ventaId).ventaId == userId && aux.Estado.Equals("P"))
                     {
                         pagosList.Add(aux);
-                    }  
+                    }
                 }
 
                 return pagosList;
@@ -631,13 +554,13 @@ namespace Proyecto_Artistica.Models
                         catch (Exception e)
                         {
                             EstadoMensaje = e.Message;
-                           
+
                         }
-                        
+
                     }
                 }
 
-               
+
             }
             catch (Exception e)
             {
@@ -669,21 +592,19 @@ namespace Proyecto_Artistica.Models
             return Enumerable.Empty<Pago>();
         }
 
-
-
-        public int AddNewCarrito(int idUsuario, int idProducto,string nombre, int cantidad, decimal precio)
+        public int AddNewCarrito(int idUsuario, int idProducto, string nombre, int cantidad, decimal precio)
         {
             int result = 0;
             try
             {
                 result = con.Insert(new Carrito
                 {
-                   productoId = idProducto,
+                    productoId = idProducto,
                     Nombre = nombre,
                     usuarioID = idUsuario,
                     Cantidad = cantidad,
                     Precio = precio,
-                   Estado = "P"
+                    Estado = "P"
                 });
                 EstadoMensaje = string.Format("Cantidad filas : {0}", result);
             }
@@ -699,9 +620,9 @@ namespace Proyecto_Artistica.Models
             try
             {
                 var carrito = con.Table<Carrito>();
-                foreach (var aux in carrito) 
+                foreach (var aux in carrito)
                 {
-                    if (aux.usuarioID == idUsuario && aux.Estado.Equals("P")) 
+                    if (aux.usuarioID == idUsuario && aux.Estado.Equals("P"))
                     {
                         resultado = 0;
                         aux.Estado = idVenta.ToString();
@@ -716,8 +637,8 @@ namespace Proyecto_Artistica.Models
                 }
             }
             catch (Exception e)
-            { 
-                EstadoMensaje = e.Message; 
+            {
+                EstadoMensaje = e.Message;
             }
             return result;
         }
@@ -727,7 +648,7 @@ namespace Proyecto_Artistica.Models
             int result = 0;
             try
             {
-               
+
                 result = con.Delete(carrito);
                 EstadoMensaje = string.Format("Cantidad filas : {0}", result);
             }
@@ -754,9 +675,9 @@ namespace Proyecto_Artistica.Models
             try
             {
                 var carrito = con.Table<Carrito>();
-                foreach (var aux in carrito) 
+                foreach (var aux in carrito)
                 {
-                    if (aux.usuarioID == user && aux.productoId == prod) 
+                    if (aux.usuarioID == user && aux.productoId == prod)
                     {
                         return aux;
                     }
@@ -780,10 +701,10 @@ namespace Proyecto_Artistica.Models
                     carritoId = carritoVar.carritoId,
                     Nombre = carritoVar.Nombre,
                     productoId = carritoVar.productoId,
-                    
+
                     usuarioID = carritoVar.usuarioID,
-                    Precio=precio,
-                    Cantidad=cantidad,
+                    Precio = precio,
+                    Cantidad = cantidad,
                     Estado = "P"
                 });
                 result = con.Update(carrito);
@@ -800,9 +721,9 @@ namespace Proyecto_Artistica.Models
             {
                 List<Carrito> carritoList = new List<Carrito>();
                 var carrito = con.Table<Carrito>();
-                foreach (var aux in carrito) 
+                foreach (var aux in carrito)
                 {
-                    if (aux.usuarioID == userId && aux.Estado.Equals("P")) 
+                    if (aux.usuarioID == userId && aux.Estado.Equals("P"))
                     {
                         carritoList.Add(aux);
                     }
@@ -828,11 +749,11 @@ namespace Proyecto_Artistica.Models
                     {
                         if (Convert.ToInt32(aux.Estado) == ventaId)
                         {
-                           
-                                carritoList.Add(aux);
-                           
+
+                            carritoList.Add(aux);
+
                         }
-                        
+
                     }
                 }
                 return carritoList;
@@ -844,5 +765,9 @@ namespace Proyecto_Artistica.Models
             return Enumerable.Empty<Carrito>();
         }
 
+        public static implicit operator UserRepository(ProductRepository v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

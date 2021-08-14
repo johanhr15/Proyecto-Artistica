@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Proyecto_Artistica.VerProductos">
+    <ContentPage.Content>
+        <StackLayout>
+        <ListView x:Name="productoList">
+                    <ListView.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="ProductoId" BackgroundColor="#515151" TextColor="White" HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Nombre" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Categoria" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Salon" BackgroundColor="#515151" TextColor="White" HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Cantitad" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Precio" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Proveedor" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Image" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                    </StackLayout>
+
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Grid.Column="0" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding productoId}" />
+                                <Label Grid.Column="1" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding Nombre}" />
+                                <Label Grid.Column="2" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding Categoria}" />
+                                <Label Grid.Column="3" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding Salon}" />
+                                <Label Grid.Column="4" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding Cantidad}" />
+                                <Label Grid.Column="5" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding Precio}" />
+                                <Label Grid.Column="6" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding Proveedor}" />
+                                <Label Grid.Column="7" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding Image}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+             <Button Text="Actualizar" x:Name="btnAct"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

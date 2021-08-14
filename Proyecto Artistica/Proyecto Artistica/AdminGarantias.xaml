@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms" 
+   x:Class="Proyecto_Artistica.AdminGarantias">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
+            <Button Text="Actualizar" x:Name="btnAct"/>
+            <ListView x:Name="listaGarantias" >
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="garantiaId" BackgroundColor="#515151" TextColor="White" HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="ventaId" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="productoId" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Descripcion" BackgroundColor="#515151" TextColor="White" HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Estado" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Fecha" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="Resolucion" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                    </StackLayout>
+
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Text="{Binding garantiaId}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="1" Text="{Binding ventaId}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="2" Text="{Binding productoId}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="3" Text="{Binding Descripcion}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="4" Text="{Binding Estado}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="5" Text="{Binding Fecha}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="6" Text="{Binding Resolucion}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="" x:Name="StatusMessage" IsVisible="true"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -44,7 +44,12 @@ namespace Proyecto_Artistica
             lblError.Text = string.Empty;
             if (UserRepository.Instancia.GetUsuario(txtUsuario.Text, txtClave.Text) != 0)
             {
-                await Navigation.PushAsync(new Main(UserRepository.Instancia.GetUsuario(txtUsuario.Text, txtClave.Text)));
+                if (revisarAdmin(UserRepository.Instancia.GetPermiso(txtUsuario.Text, txtClave.Text)))
+                {
+                    await Navigation.PushAsync(new MenuAdmin());
+                }
+                else
+                await Navigation.PushAsync(new Main(UserRepository.Instancia.GetUsuario(txtUsuario.Text, txtClave.Text))); 
             }
             else 
             {
@@ -52,6 +57,14 @@ namespace Proyecto_Artistica
             }
           
           
+        }
+        private bool revisarAdmin(string tipo)
+        {
+            if (tipo.Equals("A"))
+            {
+                return true;
+            }
+            else { return false;}
         }
 
         private async void BtnCrear_Clicked(object sender, EventArgs e)

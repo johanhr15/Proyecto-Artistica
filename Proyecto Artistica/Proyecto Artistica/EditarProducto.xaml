@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Proyecto_Artistica.EditarProducto">
+    <ContentPage.Content>
+        <StackLayout>
+        <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
+            <StackLayout Padding="10,20">
+                <Label Text="Crear Producto" TextColor="#515151" HorizontalTextAlignment="Start" FontSize="18"/>
+          
+                <Entry Placeholder="Nombre" PlaceholderColor="#515151" FontSize="13" x:Name="txtNombre"/>
+                <Entry Placeholder="Categoria" PlaceholderColor="#515151" FontSize="13" x:Name="txtCat"/>
+                <Entry Placeholder="Salon" PlaceholderColor="#515151" FontSize="13" x:Name="txtSalon"/>
+                <Entry Placeholder="Cantidad" PlaceholderColor="#515151" FontSize="13" x:Name="txtCantidad"/>
+                <Entry Placeholder="Precio" PlaceholderColor="#515151" FontSize="13" x:Name="txtPrecio"/>
+                <Entry Placeholder="Proveedor" PlaceholderColor="#515151" FontSize="13" x:Name="txtProveedor"/>
+                <Entry Placeholder="Imagen" PlaceholderColor="#515151" FontSize="13" x:Name="txtImg"/>
+
+                <Label Text="" TextColor="Red" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center" x:Name="StatusMessage"/>
+        
+                    <Button Text="Editar" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" 
+                            FontSize="13" 
+                            WidthRequest="175" HeightRequest="35"
+                            x:Name="btnEditar" HorizontalOptions="Center"/>
+       
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

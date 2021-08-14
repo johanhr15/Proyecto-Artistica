@@ -15,5 +15,9 @@
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1821" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="19.2.0.51" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Syncfusion.Xamarin.SfDataGrid" />
   </ItemGroup>
 </Project>
