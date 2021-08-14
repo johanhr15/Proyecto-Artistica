@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Net;
+using System.Net.Mail;
 
 namespace Proyecto_Artistica.Models
 {
@@ -48,6 +50,23 @@ namespace Proyecto_Artistica.Models
         }
 
         public string EstadoMensaje;
+
+        public void enviarCorreo(string asunto, string cuerpo, string destinatario)
+        {
+            MailMessage message = new MailMessage();
+            SmtpClient smtp = new SmtpClient();
+            message.From = new MailAddress("testulacit@gmail.com");
+            message.To.Add(new MailAddress(destinatario));
+            message.Subject = asunto;
+            message.Body = cuerpo;
+            smtp.Port = 587;
+            smtp.Host = "smtp.gmail.com";
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential("testulacit@gmail.com", "ulacit123");
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.Send(message);
+        }
 
         public int AddNewUsuario(string username, string nombre, string apellidos, string email, string password, string type)
         {
