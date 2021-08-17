@@ -22,16 +22,29 @@ namespace Proyecto_Artistica
         {
             InitializeComponent();
             btnEditar.Clicked += btnEditar_Clicked;
+            tbHome.Clicked += TbHome_Clicked;
+            tbLogout.Clicked += TbLogout_Clicked;
+
         }
 
-        private void btnEditar_Clicked(object sender, EventArgs e)
+        private void TbLogout_Clicked(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private async void TbHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuAdmin());
+        }
+
+        private async void btnEditar_Clicked(object sender, EventArgs e)
         {
             try
             {
                 StatusMessage.Text = string.Empty;
                 UserRepository.Instancia.UpdateGarantia(Convert.ToInt32(txtID.Text), Int32.Parse(txtVentaId.Text), Int32.Parse(txtProductoId.Text), Int32.Parse(txtFacturaId.Text), txtDescripcion.Text, txtEstado.Text, fecha.Date.Date, txtresolucion.Text);
-                StatusMessage.Text = "ID " + txtID.Text + " actualizado correctamente!";
-                StatusMessage.TextColor = Color.Green;
+                await DisplayAlert("Confirmacion", "Garantia Editada Correctamente!", "OK");
+
             }
             catch (Exception)
             {

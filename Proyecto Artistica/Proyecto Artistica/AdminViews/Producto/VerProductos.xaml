@@ -3,6 +3,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Proyecto_Artistica.VerProductos">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logout.png" Priority="3" Order="Primary" x:Name="tbLogout" />
+        <ToolbarItem IconImageSource="home.png" Priority="1" Order="Primary" x:Name="tbHome" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
         <ListView x:Name="productoList">
@@ -36,7 +40,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-             <Button Text="Actualizar" x:Name="btnAct"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

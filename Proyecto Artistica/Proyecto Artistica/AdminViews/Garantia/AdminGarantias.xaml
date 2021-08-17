@@ -4,10 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms" 
    x:Class="Proyecto_Artistica.AdminGarantias">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logout.png" Priority="3" Order="Primary" x:Name="tbLogout" />
+        <ToolbarItem IconImageSource="home.png" Priority="1" Order="Primary" x:Name="tbHome" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout BackgroundColor="White">
             <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
-            <Button Text="Actualizar" x:Name="btnAct"/>
             <ListView x:Name="listaGarantias" >
                 <ListView.Header>
                     <StackLayout Orientation="Horizontal">

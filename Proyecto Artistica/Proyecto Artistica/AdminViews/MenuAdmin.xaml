@@ -3,6 +3,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Proyecto_Artistica.MenuAdmin">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logout.png" Priority="3" Order="Primary" x:Name="tbLogout" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -14,13 +17,13 @@
                    HeightRequest="100" Margin="0,50,0,30" />
 
             <StackLayout Grid.Row="1" Padding="10,10">
-                <Button x:Name="btnMenuUsuarios"  Text="Usuarios" BackgroundColor="Blue" TextColor="#fff" BorderRadius="0" FontSize="15"/> 
+                <Button x:Name="btnMenuUsuarios"  Text="Usuarios" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" FontSize="13"/> 
             </StackLayout>
             <StackLayout Grid.Row="2" Padding="10,100">
-                <Button x:Name="btnMenuProductos"  Text="Productos" BackgroundColor="Red" TextColor="#fff" BorderRadius="0" FontSize="15"/> 
+                <Button x:Name="btnMenuProductos"  Text="Productos" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" FontSize="13"/> 
             </StackLayout>
               <StackLayout Grid.Row="3" Padding="10,10">
-                <Button x:Name="btnMenuGarantia"  Text="Garantias" BackgroundColor="Green" TextColor="#fff" BorderRadius="0" FontSize="15"/> 
+                <Button x:Name="btnMenuGarantia"  Text="Garantias" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" FontSize="13"/> 
             </StackLayout>
         </Grid>
     </ContentPage.Content>

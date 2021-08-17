@@ -22,13 +22,27 @@ namespace Proyecto_Artistica
         {
             InitializeComponent();
             btnEditar.Clicked += btnEditar_Clicked;
+            tbHome.Clicked += TbHome_Clicked;
+            tbLogout.Clicked += TbLogout_Clicked;
+
         }
 
-        private void btnEditar_Clicked(object sender, EventArgs e)
+        private void TbLogout_Clicked(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private async void TbHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuAdmin());
+        }
+
+        private async void btnEditar_Clicked(object sender, EventArgs e)
         {
             try
             {
                 UserRepository.Instancia.UpdateUsuario(Convert.ToInt32(txtActualizarId.Text), txtActualizarNombre.Text, txtActualizarApellidos.Text, txtActualizarUsuario.Text, txtActualizarEmail.Text, txtActualizarPassword.Text, txtActualizarType.Text);
+                await DisplayAlert("Confirmacion", "Usuario Editado Correctamente!", "OK");
                 StatusMessage.Text = "ID " + txtActualizarId.Text + " actualizado correctamente";
                 StatusMessage.TextColor = Color.Green;
                 clean();

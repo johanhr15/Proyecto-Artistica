@@ -3,6 +3,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Proyecto_Artistica.EditarUsuario">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logout.png" Priority="3" Order="Primary" x:Name="tbLogout" />
+        <ToolbarItem IconImageSource="home.png" Priority="1" Order="Primary" x:Name="tbHome" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
@@ -19,7 +23,7 @@
                 
             <Label Text="" TextColor="Red" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center" x:Name="StatusMessage"/>
 
-                   <Button Text="Editar" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" 
+                   <Button Text="Editar Usuario" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" 
                         FontSize="13" 
                         WidthRequest="175" HeightRequest="35"
                         x:Name="btnEditar" HorizontalOptions="Center"/>

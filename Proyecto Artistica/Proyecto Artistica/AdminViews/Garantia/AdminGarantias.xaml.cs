@@ -20,23 +20,21 @@ namespace Proyecto_Artistica
         public AdminGarantias()
         {
             InitializeComponent();
-            btnAct.Clicked += BtnAct_Clicked;
-        }
-
-        private void BtnAct_Clicked(object sender, EventArgs e)
-        {
             var allGarantias = UserRepository.Instancia.GetAllGarantias();
             listaGarantias.ItemsSource = allGarantias;
+            tbHome.Clicked += TbHome_Clicked;
+            tbLogout.Clicked += TbLogout_Clicked;
+
         }
 
-        /*
-         * <Grid.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="OnTapped"/>
-                                </Grid.GestureRecognizers>
-         * 
-         * void OnTapped(System.Object sender, System.EventArgs e)
+        private void TbLogout_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("alert","you have been alerted","ok");
-        }*/
+            System.Environment.Exit(0);
+        }
+
+        private async void TbHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuAdmin());
+        }
     }
 }

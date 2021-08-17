@@ -3,6 +3,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Proyecto_Artistica.UsuariosMenu">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logout.png" Priority="3" Order="Primary" x:Name="tbLogout" />
+        <ToolbarItem IconImageSource="home.png" Priority="1" Order="Primary" x:Name="tbHome" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
          <Grid>
             <Grid.RowDefinitions>
@@ -15,19 +19,19 @@
                    HeightRequest="100" Margin="0,50,0,30" />
 
             <StackLayout Grid.Row="1" Padding="10,10">
-                <Button x:Name="btnVerUsuario"  Text="Ver" BackgroundColor="Black" TextColor="#fff" BorderRadius="0" FontSize="15"/> 
+                <Button x:Name="btnVerUsuario"  Text="Ver" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" FontSize="13"/> 
             </StackLayout>
 
             <StackLayout Grid.Row="2" Padding="10,10">
-                <Button x:Name="btnAgregarUsuario"  Text="Agregar" BackgroundColor="Blue" TextColor="#fff" BorderRadius="0" FontSize="15"/> 
+                <Button x:Name="btnAgregarUsuario"  Text="Agregar" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" FontSize="13"/> 
             </StackLayout>
 
             <StackLayout Grid.Row="3" Padding="10,10">
-                <Button x:Name="btnEliminarUsuario"  Text="Eliminar" BackgroundColor="Red" TextColor="#fff" BorderRadius="0" FontSize="15"/> 
+                <Button x:Name="btnEliminarUsuario"  Text="Eliminar" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" FontSize="13"/> 
             </StackLayout>
 
               <StackLayout Grid.Row="4" Padding="10,10">
-                <Button x:Name="btnEditarUsuario"  Text="Editar" BackgroundColor="Green" TextColor="#fff" BorderRadius="0" FontSize="15"/> 
+                <Button x:Name="btnEditarUsuario"  Text="Editar" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" FontSize="13"/> 
             </StackLayout>
         </Grid>
     </ContentPage.Content>

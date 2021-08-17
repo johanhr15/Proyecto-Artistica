@@ -21,13 +21,21 @@ namespace Proyecto_Artistica
         public VerProductos()
         {
             InitializeComponent();
-            btnAct.Clicked += BtnAct_Clicked;
-        }
-
-        private void BtnAct_Clicked(object sender, EventArgs e)
-        {
             var allProds = UserRepository.Instancia.GetAllProductos();
             productoList.ItemsSource = allProds;
+            tbHome.Clicked += TbHome_Clicked;
+            tbLogout.Clicked += TbLogout_Clicked;
+
+        }
+
+        private void TbLogout_Clicked(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private async void TbHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuAdmin());
         }
     }
 }

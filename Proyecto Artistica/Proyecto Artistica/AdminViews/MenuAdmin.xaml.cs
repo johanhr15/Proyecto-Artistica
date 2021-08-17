@@ -13,6 +13,13 @@ namespace Proyecto_Artistica
             btnMenuGarantia.Clicked += BtnMenuGarantia_Clicked;
             btnMenuProductos.Clicked += BtnMenuProductos_Clicked;
             btnMenuUsuarios.Clicked += BtnMenuUsuarios_Clicked;
+            tbLogout.Clicked += TbLogout_Clicked;
+
+        }
+
+        private void TbLogout_Clicked(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
         }
 
         private async void BtnMenuUsuarios_Clicked(object sender, EventArgs e)

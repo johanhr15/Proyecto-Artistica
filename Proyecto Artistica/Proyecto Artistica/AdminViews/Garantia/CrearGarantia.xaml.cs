@@ -24,6 +24,19 @@ namespace Proyecto_Artistica
             btnCrear.Clicked += BtnCrear_Clicked;
             StatusMessage.Text = "";
 
+            tbHome.Clicked += TbHome_Clicked;
+            tbLogout.Clicked += TbLogout_Clicked;
+
+        }
+
+        private void TbLogout_Clicked(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private async void TbHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuAdmin());
         }
 
         private async void BtnCrear_Clicked(object sender, EventArgs e)
@@ -33,9 +46,13 @@ namespace Proyecto_Artistica
             if (StatusMessage.Text.Contains("Cantidad"))
             {
                 clean();
+                await DisplayAlert("Confirmacion", "Garantia Creada Correctamente!", "OK");
                 await Navigation.PushAsync(new GarantiasMenu());
             }
         }
+
+
+
         private void clean()
         {
             txtVentaId.Text = "";

@@ -21,11 +21,26 @@ namespace Proyecto_Artistica
         {
             InitializeComponent();
             btnCrear.Clicked += BtnCrear_Clicked;
+            tbHome.Clicked += TbHome_Clicked;
+            tbLogout.Clicked += TbLogout_Clicked;
+
         }
 
-        private void BtnCrear_Clicked(object sender, EventArgs e)
+        private void TbLogout_Clicked(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private async void TbHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuAdmin());
+        }
+
+        private async void BtnCrear_Clicked(object sender, EventArgs e)
         {
             UserRepository.Instancia.AddNewProducto(txtNombre.Text, txtCat.Text, txtSalon.Text, Int32.Parse(txtCantidad.Text), Int32.Parse(txtPrecio.Text), txtProveedor.Text, txtImg.Text);
+            await DisplayAlert("Confirmacion", "Producto Creado Correctamente!", "OK");
+            await Navigation.PushAsync(new ProductosMenu());
             clean();
         }
         private void clean()

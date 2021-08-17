@@ -21,11 +21,26 @@ namespace Proyecto_Artistica
         {
             InitializeComponent();
             btnEliminar.Clicked += BtnEliminar_Clicked;
+            tbHome.Clicked += TbHome_Clicked;
+            tbLogout.Clicked += TbLogout_Clicked;
+
         }
 
-        private void BtnEliminar_Clicked(object sender, EventArgs e)
+        private void TbLogout_Clicked(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private async void TbHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuAdmin());
+        }
+
+        private async void BtnEliminar_Clicked(object sender, EventArgs e)
         {
             UserRepository.Instancia.DeleteProduct(Int32.Parse(txtId.Text));
+            await DisplayAlert("Confirmacion", "Producto Eliminado Correctamente!", "OK");
+            await Navigation.PushAsync(new ProductosMenu());
         }
     }
 }

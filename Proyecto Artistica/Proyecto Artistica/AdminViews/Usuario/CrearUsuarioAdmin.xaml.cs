@@ -23,6 +23,19 @@ namespace Proyecto_Artistica
             StatusMessage.Text = "";
             btnCrear.Clicked += BtnCrear_Clicked;
 
+            tbHome.Clicked += TbHome_Clicked;
+            tbLogout.Clicked += TbLogout_Clicked;
+
+        }
+
+        private void TbLogout_Clicked(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private async void TbHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuAdmin());
         }
 
         private async void BtnCrear_Clicked(object sender, EventArgs e)
@@ -30,6 +43,9 @@ namespace Proyecto_Artistica
             StatusMessage.Text = string.Empty;
             UserRepository.Instancia.AddNewUsuario(txtUsuario.Text, txtNombre.Text, txtApellidos.Text, txtEmail.Text, txtClave.Text, txtTipo.Text);
             StatusMessage.Text = UserRepository.Instancia.EstadoMensaje;
+            await DisplayAlert("Confirmacion", "Usuario Creado Correctamente!", "OK");
+            await Navigation.PushAsync(new UsuariosMenu());
+
             if (StatusMessage.Text.Contains("Cantidad"))
             {
                 clean();

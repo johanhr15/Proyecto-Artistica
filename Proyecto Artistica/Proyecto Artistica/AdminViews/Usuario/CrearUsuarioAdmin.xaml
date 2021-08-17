@@ -3,6 +3,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Proyecto_Artistica.CrearUsuarioAdmin">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logout.png" Priority="3" Order="Primary" x:Name="tbLogout" />
+        <ToolbarItem IconImageSource="home.png" Priority="1" Order="Primary" x:Name="tbHome" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid BackgroundColor="White">
         <Grid.RowDefinitions>
@@ -24,7 +28,7 @@
 
             <Label Text="" TextColor="Red" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center" x:Name="StatusMessage"/>
         
-                <Button Text="Registrarse" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" 
+                <Button Text="Crear Cuenta" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" 
                         FontSize="13" 
                         WidthRequest="175" HeightRequest="35"
                         x:Name="btnCrear" HorizontalOptions="Center"/>

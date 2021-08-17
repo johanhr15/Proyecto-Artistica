@@ -25,6 +25,19 @@ namespace Proyecto_Artistica
             btnEditarProducto.Clicked += BtnEditarProducto_Clicked;
             btnEliminarProducto.Clicked += BtnEliminarProducto_Clicked;
             btnVerProducto.Clicked += BtnVerProducto_Clicked;
+            tbHome.Clicked += TbHome_Clicked;
+            tbLogout.Clicked += TbLogout_Clicked;
+
+        }
+
+        private void TbLogout_Clicked(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private async void TbHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuAdmin());
         }
 
         private async void BtnVerProducto_Clicked(object sender, EventArgs e)

@@ -22,14 +22,28 @@ namespace Proyecto_Artistica
         {
             InitializeComponent();
             btnEditar.Clicked += BtnEditar_Clicked;
+            tbHome.Clicked += TbHome_Clicked;
+            tbLogout.Clicked += TbLogout_Clicked;
+
         }
 
-        private void BtnEditar_Clicked(object sender, EventArgs e)
+        private void TbLogout_Clicked(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private async void TbHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuAdmin());
+        }
+
+        private async void BtnEditar_Clicked(object sender, EventArgs e)
         {
             try
             {
                 StatusMessage.Text = string.Empty;
                 UserRepository.Instancia.UpdateProductoAdmin(Convert.ToInt32(txtID.Text), txtNombre.Text, txtCat.Text, txtSalon.Text, Int32.Parse(txtCantidad.Text), Int32.Parse(txtPrecio.Text), txtProveedor.Text, txtImg.Text);
+                await DisplayAlert("Confirmacion", "Producto Editado Correctamente!", "OK");
                 StatusMessage.Text = "ID " + txtID.Text + " actualizado correctamente";
                 StatusMessage.TextColor = Color.Green;
             }
