@@ -24,11 +24,11 @@ namespace Proyecto_Artistica
 
         public Main(int userId)
         {
-            var images = new List<string> { "C:/Users/eherreran967/Desktop/Prod/Proyecto-Artistica/Proyecto Artistica/Proyecto Artistica.Android/Resources/drawable/home1.JPG",
-                                            "C:/Users/eherreran967/Desktop/Prod/Proyecto-Artistica/Proyecto Artistica/Proyecto Artistica.Android/Resources/drawable/home2.JPG",
-                                            "C:/Users/eherreran967/Desktop/Prod/Proyecto-Artistica/Proyecto Artistica/Proyecto Artistica.Android/Resources/drawable/home3.JPG",
-                                            "C:/Users/eherreran967/Desktop/Prod/Proyecto-Artistica/Proyecto Artistica/Proyecto Artistica.Android/Resources/drawable/home4.JPG",
-                                            "Proyecto-Artistica/Proyecto Artistica/Proyecto Artistica.Android/Resources/drawable/home5.JPG"};
+            var images = new List<string> { "home1.JPG",
+                                            "home2.JPG",
+                                            "home3.JPG",
+                                            "home4.JPG",
+                                            "home5.JPG"};
 
             InitializeComponent();
             BindingContext = this;

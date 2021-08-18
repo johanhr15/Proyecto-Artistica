@@ -90,7 +90,7 @@ namespace Proyecto_Artistica.Models
             return result;
         }
 
-        public int UpdateUsuario(int id, string username, string nombre, string apellidos, string email, string password, string type)
+        public int UpdateUsuario(int id,  string nombre, string apellidos, string username, string email, string password, string type)
         {
             int result = 0;
             try

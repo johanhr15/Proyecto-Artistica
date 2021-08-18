@@ -24,6 +24,9 @@ namespace Proyecto_Artistica
             txtProveedor.Text = producto.Proveedor;
             txtSalon.Text = producto.Salon;
             txtCantidad.Text = producto.Cantidad.ToString();
+            txtimage.Text = producto.Image;
+            var images = new List<string> { string.Concat(txtimage.Text)};
+            MainCarouselView.ItemsSource = images;
             btnCrear.Clicked += BtnCrear_Clicked;
             tbCart.Clicked += TbCart_Clicked;
             tbHome.Clicked += TbHome_Clicked;
