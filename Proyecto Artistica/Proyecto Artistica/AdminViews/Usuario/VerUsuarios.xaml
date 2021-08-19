@@ -13,12 +13,11 @@
             <ListView x:Name="listaUsuarios" >
                 <ListView.Header>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="usuarioId" BackgroundColor="#515151" TextColor="White" HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="ID" BackgroundColor="#515151" TextColor="White" HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
                         <Label Text="Nombre" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
                         <Label Text="Apellidos" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
-                        <Label Text="userName" BackgroundColor="#515151" TextColor="White" HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
+                        <Label Text="User Name" BackgroundColor="#515151" TextColor="White" HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
                         <Label Text="Email" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
-                        <Label Text="Password" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
                         <Label Text="Type" BackgroundColor="#515151" TextColor="White"   HorizontalTextAlignment="Center" WidthRequest="60" FontSize="12"/>
                     </StackLayout>
 
@@ -33,8 +32,7 @@
                                 <Label Grid.Column="2" Text="{Binding Apellidos}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
                                 <Label Grid.Column="3" Text="{Binding userName}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
                                 <Label Grid.Column="4" Text="{Binding Email}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
-                                <Label Grid.Column="5" Text="{Binding Password}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
-                                <Label Grid.Column="6" Text="{Binding Type}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
+                                <Label Grid.Column="5" Text="{Binding Type}" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" WidthRequest="75" FontSize="15"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

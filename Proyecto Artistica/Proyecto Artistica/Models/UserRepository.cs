@@ -98,9 +98,9 @@ namespace Proyecto_Artistica.Models
                 Usuario usuario = (new Usuario
                 {
                     usuarioId = id,
-                    userName = username,
                     Nombre = nombre,
                     Apellidos = apellidos,
+                    userName = username,
                     Email = email,
                     Password = password,
                     Type = type

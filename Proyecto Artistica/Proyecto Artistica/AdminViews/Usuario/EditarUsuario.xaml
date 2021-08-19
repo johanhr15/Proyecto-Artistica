@@ -18,7 +18,7 @@
                 <Entry  x:Name="txtActualizarApellidos" Placeholder="Apellidos" PlaceholderColor="#515151" FontSize="13"/>
                 <Entry  x:Name="txtActualizarUsuario" Placeholder="Usuario" PlaceholderColor="#515151" FontSize="13"/>
                 <Entry  x:Name="txtActualizarEmail" Placeholder="Email" PlaceholderColor="#515151" FontSize="13"/>
-                <Entry  x:Name="txtActualizarPassword" Placeholder="Password" PlaceholderColor="#515151" FontSize="13"/>
+                <Entry  x:Name="txtActualizarPassword" Placeholder="Password" IsPassword="True" PlaceholderColor="#515151" FontSize="13"/>
                 <Entry  x:Name="txtActualizarType" Placeholder="Type" PlaceholderColor="#515151" FontSize="13"/>
                 
             <Label Text="" TextColor="Red" FontAttributes="Italic" VerticalOptions="Center" HorizontalOptions="Center" x:Name="StatusMessage"/>
