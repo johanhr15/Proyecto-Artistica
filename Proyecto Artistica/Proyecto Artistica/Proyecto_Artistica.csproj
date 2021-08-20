@@ -20,4 +20,9 @@
   <ItemGroup>
     <None Remove="Syncfusion.Xamarin.SfDataGrid" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ProductosViewFiltered.xaml.cs">
+      <DependentUpon>ProductosViewFiltered.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

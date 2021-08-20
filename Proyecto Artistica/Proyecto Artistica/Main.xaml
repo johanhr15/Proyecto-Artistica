@@ -28,7 +28,7 @@
                 <Label Text="La Artística" TextColor="#515151" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="30"/>
                 <Label Text="" x:Name="lblidUser" IsVisible="false" />
                 <!-- This is for the IndicatorView video  -->
-                <StackLayout Grid.Row="1" Padding="0,20,0,-450" VerticalOptions="Center">
+                <StackLayout Grid.Row="1" Padding="0,20,0,-500" VerticalOptions="Center">
                     <IndicatorView x:Name="Indicator" IndicatorColor="LightGray" SelectedIndicatorColor="Gray" IndicatorsShape="Square" Padding="0,0,0,0"/>
                     <CarouselView x:Name="MainCarouselView" IndicatorView="{x:Reference Indicator}">
                         <CarouselView.ItemTemplate>
@@ -50,7 +50,7 @@
                             <ImageButton Source="Colchones.png" x:Name="btnColchones" Aspect="AspectFit" BackgroundColor="Transparent"/>
                         </Grid>
                     <Grid Padding="10" BackgroundColor="White" Margin="0,5,0,5">
-                        <ImageButton Source="Muebles.png" x:Name="btnMuebles" Aspect="AspectFit" BackgroundColor="Transparent" />
+                        <ImageButton Source="Muebles.png" x:Name="btnNatuzziItalia" Aspect="AspectFit" BackgroundColor="Transparent" />
                     </Grid>
                 </StackLayout>
             </Grid>

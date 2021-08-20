@@ -41,12 +41,30 @@ namespace Proyecto_Artistica
             btnHistorialCompras.Clicked += BtnHistorialCompras_Clicked;
             btnHistorialGarantia.Clicked += BtnHistorialGarantia_Clicked;
             btnHistorialPagos.Clicked += BtnHistorialPagos_Clicked;
+            btnColchones.Clicked += BtnColchones_Clicked;
+            btnPromociones.Clicked += BtnPromociones_Clicked;
+            btnNatuzziItalia.Clicked += BtnNatuzziItalia_Clicked;
             MainCarouselView.ItemsSource = images;
             Device.StartTimer(TimeSpan.FromSeconds(5), (Func<bool>)(() =>
             {
                 MainCarouselView.Position = (MainCarouselView.Position + 1) % images.Count;
                 return true;
             }));
+        }
+
+        private async void BtnNatuzziItalia_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProductosViewFiltered(Convert.ToInt32(lblidUser.Text), "Natuzzi Italia"));
+        }
+
+        private async void BtnPromociones_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProductosViewFiltered(Convert.ToInt32(lblidUser.Text), "Promociones"));
+        }
+
+        private async void BtnColchones_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProductosViewFiltered(Convert.ToInt32(lblidUser.Text), "Colchones"));
         }
 
         protected async override void OnAppearing()

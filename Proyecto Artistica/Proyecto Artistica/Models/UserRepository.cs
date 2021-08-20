@@ -311,6 +311,28 @@ namespace Proyecto_Artistica.Models
             return Enumerable.Empty<Producto>();
         }
 
+        public IEnumerable<Producto> GetAllProductosFiltered(string categoria)
+        {
+            try
+            {
+                List<Producto> productoLista = new List<Producto>();
+                var producto = con.Table<Producto>();
+                foreach (var aux in producto)
+                {
+                    if (aux.Categoria ==  categoria)
+                    {
+                        productoLista.Add(aux);
+                    }
+                }
+                return productoLista;
+            }
+            catch (Exception e)
+            {
+                EstadoMensaje = e.Message;
+            }
+            return Enumerable.Empty<Producto>();
+        }
+
         public Producto GetProducto(int id)
         {
             try
