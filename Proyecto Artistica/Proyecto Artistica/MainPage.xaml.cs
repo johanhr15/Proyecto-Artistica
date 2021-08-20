@@ -34,9 +34,9 @@ namespace Proyecto_Artistica
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
-        private void BtnEnviarClave_Clicked(object sender, EventArgs e)
+        private async void BtnEnviarClave_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            await Navigation.PushAsync(new RecuperarPass());
         }
 
         private async void BtnIniciarSesion_Clicked(object sender, EventArgs e)
