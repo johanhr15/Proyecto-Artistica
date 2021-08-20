@@ -68,6 +68,36 @@ namespace Proyecto_Artistica.Models
             smtp.Send(message);
         }
 
+        public bool UpdatePass(int idUsuario,string newPass)
+        {
+            bool result = false;
+            int resultado = 0;
+            try
+            {
+                var usuario = con.Table<Usuario>();
+                foreach (var aux in usuario)
+                {
+                    if (aux.usuarioId == idUsuario)
+                    {
+                        resultado = 0;
+                        aux.Password = newPass;
+                        try
+                        {
+                            resultado = con.Update(aux);
+                            result = true;
+                        }
+                        catch (Exception e)
+                        { EstadoMensaje = e.Message; }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                EstadoMensaje = e.Message;
+            }
+            return result;
+        }
+
         public int AddNewUsuario(string username, string nombre, string apellidos, string email, string password, string type)
         {
             int result = 0;
@@ -193,6 +223,53 @@ namespace Proyecto_Artistica.Models
 
             return 0;
         }
+
+public int GetUserbyMail(String email)
+        {
+
+            try
+            {
+
+                var usuarios = con.Table<Usuario>();
+
+                foreach (var aux in usuarios)
+                {
+                    if (aux.Email.Equals(email))
+                    {
+                        return aux.usuarioId;
+                    }
+                }
+
+            }
+            catch (Exception e)
+            { EstadoMensaje = e.Message; }
+
+            return 0;
+        }
+
+        public String GetCorreoById(int id)
+        {
+
+            try
+            {
+
+                var usuarios = con.Table<Usuario>();
+
+                foreach (var aux in usuarios)
+                {
+                    if (aux.usuarioId == id)
+                    {
+                        return aux.Email;
+                    }
+                }
+
+            }
+            catch (Exception e)
+            { EstadoMensaje = e.Message; }
+
+            return "";
+        }
+
         public string GetPermiso(string username, string password)
         {
 

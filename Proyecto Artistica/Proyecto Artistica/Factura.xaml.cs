@@ -86,6 +86,9 @@ namespace Proyecto_Artistica
                     {
                         if (UserRepository.Instancia.UpdateCarrito(Convert.ToInt32(lblidUser.Text), ventaId))
                         {
+                            String asunto = "Reporte Compra La Artística";
+                            String cuerpo = "Su compra se realizó con éxito.\nLa Artistica S.A.";
+                            UserRepository.Instancia.enviarCorreo(asunto, cuerpo, UserRepository.Instancia.GetCorreoById(Convert.ToInt32(lblidUser.Text)));
                             await DisplayAlert("Compra", "Compra realizada con exito...", "OK");
                             for (int i = 0; i < pago; i++)
                             {

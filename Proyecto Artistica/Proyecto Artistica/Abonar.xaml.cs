@@ -35,6 +35,10 @@ namespace Proyecto_Artistica
                 {
                     var allProd = UserRepository.Instancia.GetAllPagos(Convert.ToInt32(lblidUser.Text));
                     pagosList.ItemsSource = allProd;
+                    String asunto = "Reporte Abono La Artística";
+                    String cuerpo = "Su abono se realizó con éxito.\nLa Artistica S.A.";
+                    UserRepository.Instancia.enviarCorreo(asunto, cuerpo, UserRepository.Instancia.GetCorreoById(Convert.ToInt32(lblidUser.Text)));
+                    
                     await DisplayAlert("Abono", "Abono realizado con exito...", "OK");
                 }
                 else 

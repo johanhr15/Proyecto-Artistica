@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Proyecto_Artistica.RecuperarPass">
+    <ContentPage.Content>
+        <StackLayout Grid.Row="1" Padding="10,20">
+            <Label Text="" HeightRequest="10" x:Name="lblidUser" IsVisible="false"></Label>
+            <Label Text="Ingrese su correo electrónico" TextColor="Black"  HorizontalTextAlignment="Start" FontSize="24" FontAttributes="Bold"/>
+            <Entry Placeholder="ejemplo@gmail.com" PlaceholderColor="Black" FontSize="15" x:Name="txtUsuario" TextColor="Black" FontAttributes="Bold"/>
+            <Button x:Name="btnsendmail"  Text="Recuperar contraseña" BackgroundColor="#515151" TextColor="#fff" BorderRadius="0" FontSize="15" 
+                WidthRequest="175" HeightRequest="35"/>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
